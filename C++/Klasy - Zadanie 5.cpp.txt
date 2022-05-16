@@ -1,0 +1,43 @@
+#include <iostream>
+
+using namespace std;
+
+class Osoba
+{
+public:
+    string imie;
+    string nazwisko;
+    int ocena;
+};
+
+void Uczen1()
+{
+    Osoba uczen1;
+    uczen1.imie = "Domin";
+    uczen1.nazwisko = "Zuchowicz";
+    cout << "podaj ocene " << uczen1.imie << " " << uczen1.nazwisko << ":" << endl;
+    cin >> uczen1.ocena;
+
+    cout << uczen1.imie << " " << uczen1.nazwisko << " dostal ocene: " << uczen1.ocena << endl;
+}
+
+void Uczen2()
+{
+
+    Osoba uczen2;
+    uczen2.imie = "Mateusz";
+    uczen2.nazwisko = "Sek";
+    cout << "podaj ocene " << uczen2.imie << " " << uczen2.nazwisko << ":" << endl;
+    cin >> uczen2.ocena;
+
+
+    cout << uczen2.imie << " " << uczen2.nazwisko << " dostal ocene: " << uczen2.ocena << endl;
+}
+
+int main()
+{
+    Uczen1();
+    Uczen2();
+
+    return 0;
+}
