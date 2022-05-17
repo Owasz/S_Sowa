@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<form action="">
+<input type="number" id="number">
+<select>
+<option value="a">silnia</option>
+<option value="b">potega</option>
+</select>
+
+<button>sprawdz</button>
+</form>
+Podaj potęgę dla liczby 2
+<script>
+const form = document.querySelector('form');
+const liczba = document.getElementById('number');
+const opcja = document.querySelectorAll('option');
+
+function potega(n){
+let x=2;
+for(let i=0;i<n;i++)
+{
+x*=x;
+}
+return Math.sqrt(x);
+}
+function silnia(n){
+let w=1;
+for(let i=1;i<=n;i++){
+w*=i;
+}
+return w;
+}
+form.addEventListener('submit',(e)=>{
+e.preventDefault();
+if(opcja[0].selected==true)
+{
+alert(`silnia to: ${silnia(liczba.value)}`)
+}
+else
+{
+alert(`potega to: ${potega(liczba.value)}`);
+}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="">
+        podaj pierwszą liczbę: <input type="number" id="liczbaA"> <br>
+        podaj drugą liczbę: <input type="number" id="liczbaB"> <br>
+        <button id="button1">Dodawanie</button>
+        <button id="button2">Odejmowanie</button>
+        <button id="button3">Możenie</button>
+        <button id="button4">Dzielenie</button>
+    </form>
+
+    <div></div>
+
+    <script>
+        
+        
+        const form = document.querySelector('from');
+        const div = document.querySelector('div');
+        const liczbaA = document.getElementById('liczbaA');
+        const liczbaB = document.getElementById('liczbaB');
+    
+        
+       
+
+        button1.addEventListener("click", (e) => {
+            e.preventDefault();
+            div.textContent = liczbaA.value*1+liczbaB.value*1 + ` to wynik dodawania ` + liczbaA.value + ` i ` + liczbaB.value;
+        });
+        
+        button2.addEventListener("click", (e) => {
+            e.preventDefault();
+            div.textContent = liczbaA.value*1-liczbaB.value*1 + ` to wynik odejmowania ` + liczbaA.value + ` i ` + liczbaB.value;
+        });
+        
+        button3.addEventListener("click", (e) => {
+            e.preventDefault();
+            div.textContent = liczbaA.value*1*liczbaB.value*1 + ` to wynik mnożenia ` + liczbaA.value + ` i ` + liczbaB.value;
+        });
+        
+        button4.addEventListener("click", (e) => {
+            if(liczbaB.value =! 0){
+                e.preventDefault();
+            div.textContent = liczbaA.value*1/liczbaB.value*1 + ` to wynik dzielenia ` + liczbaA.value + ` i ` + liczbaB.value;
+            }
+            else {
+           alert('nie dziel przez 0');
+        }
+        });
+    </script>
+</body>
+</html>
