@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cos {
+            background-color: grey;
+        }
+        .zmiana{
+            color: red;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+        <div class="cos">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint voluptatem iste deserunt corrupti consectetur quia, atque repellendus et? Voluptates, ad
+        </div>
+
+        <script>
+            function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+            //pobieramy diva
+            const divZeStrony = document.querySelector('div');
+            const napisy = ['Rysio ma tatuaż','Mucha leci samolotem','Sęku w klatce','Sowa porywa szczygła'];
+
+            //przypisujemy obsługę zdarzenia najechania kursorem myszy na diva
+            divZeStrony.addEventListener('mouseover', function () {
+               // divZeStrony.style.color = 'yellow';
+               //dodajemy klasę zmiana do diva
+               divZeStrony.classList.add('zmiana');
+            });
+
+            //przypisujemy obsługę zdarzenia zjechania kursorem myszy z diva
+            divZeStrony.addEventListener('mouseout', function() {
+              //  divZeStrony.style.color = 'black';
+                //dodajemy klasę zmiana do diva
+               divZeStrony.classList.remove('zmiana');
+            });
+
+            //przypisujemy mechanikę klikania na diva
+            divZeStrony.addEventListener('click', function () {
+                let los = getRandomIntInclusive(0, 3);
+                //podmieniamy treść textu
+                divZeStrony.textContent = napisy[los];
+            });
+
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <h2>Współrzędna X kursora: </h2>
+        <h2>Współrzędna Y kursora: </h2>
+        <h2>Nacisnęto klawisz: </h2>
+        <script>
+            //pobieramy wszystkie nagłówki
+            const naglowki = document.querySelectorAll('h2');
+
+            //obsługa zdarzeniaruchu kursora myszy
+            document.addEventListener('mousemove', function(event) {
+                //współrzędna X myszy - event.clientX
+                //współrzędna Y myszy - event.clientY
+
+                naglowki[0].textContent = `Współrzędna X kursora: ${event.clientX}`;
+                naglowki[1].textContent = `Współrzędna Y kursora: ${event.clientY}`;
+            });
+
+            //przypisujemy obsługę zdarzenia naciskania klawiszy na klawiaturze
+            document.addEventListener('keydown',function(event) {
+                naglowki[2].textContent += event.key;
+            });
+        </script>
+</body>
+</html>
