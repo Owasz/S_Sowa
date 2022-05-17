@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przykłady programowania obiektowego</title>
+</head>
+<body>
+
+    <div></div>
+
+     <script src="Samochod.js"></script>
+     <script src="komis.js"></script>
+     <script>
+         //tutaj będziemy działać z klasą Samochod
+         //utwórzmy jakiś przykładowy obiekt
+         const fordzik = new Samochod('Ford', 'Mondeo' ,3000 ,2003, 9);
+         console.log(fordzik);
+
+         const polonezik = new Samochod('FSO', 'Polonez', 10000, 1985, 10);
+         console.log(polonezik);
+
+         const kijanka = new Samochod('KIA', 'Ceed', 20000, 2003, 10);
+
+         console.log(fordzik.wiek());
+         console.log(polonezik.wiek());
+
+         console.log(fordzik.koszt());
+         console.log(polonezik.koszt());
+
+
+         //tworzymy nowy komis (nowy obiekt na bazie klasy Komis)
+         const scam = new Komis('Scam')
+         console.log(scam);
+
+         //dodajemy do naszego komisu pierwszy samochod
+         scam.dodajSamochod(fordzik);
+         console.log(scam);
+         scam.dodajSamochod(polonezik);
+
+         //wyświetlamy dane wszystkich samochodów w komisie
+         scam.wyswietlSamochody();
+
+         scam.dodajSamochod(kijanka);
+         scam.wyswietlSamochody();
+     </script>
+</body>
+</html>
